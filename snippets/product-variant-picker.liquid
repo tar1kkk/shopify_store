@@ -81,6 +81,7 @@
         form="{{ product_form_id }}"
       >
         {%- for variant in product.variants -%}
+          <img src='//cdn.shopify.com/s/files/1/0744/5787/4752/products/TEplat32.jpg?v=1680008980&width=1946'/>
           <option
             {% if variant == product.selected_or_first_available_variant %}
               selected="selected"
