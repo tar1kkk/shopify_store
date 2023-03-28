@@ -81,7 +81,6 @@
         form="{{ product_form_id }}"
       >
         {%- for variant in product.variants -%}
-          <img src='//cdn.shopify.com/s/files/1/0744/5787/4752/products/TEplat32.jpg?v=1680008980&width=1946'/>
           <option
             {% if variant == product.selected_or_first_available_variant %}
               selected="selected"
@@ -90,6 +89,13 @@
               disabled
             {% endif %}
             value="{{ variant.id }}"
+          >
+           <img
+            src="{{ item.image | image_url: width: 140 }}"
+            alt="{{ item.image.alt | escape }}"
+            width="70"
+            height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
+            loading="lazy"
           >
             {%- liquid
               echo variant.title
