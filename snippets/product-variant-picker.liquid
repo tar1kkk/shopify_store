@@ -23,7 +23,7 @@
     >
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
-          <legend class="form__label">{{ option.name }}</legend>
+          <legend class="form__label">{{ option.name }}11</legend>
           {% render 'product-variant-options', product: product, option: option, block: block %}
         </fieldset>
       {%- endfor -%}
@@ -45,7 +45,7 @@
       {%- for option in product.options_with_values -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }} 1
+            {{ option.name }} 
           </label>
           <div class="select">
             <select
