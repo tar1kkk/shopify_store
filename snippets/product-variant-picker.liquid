@@ -90,36 +90,7 @@
             {% endif %}
             value="{{ variant.id }}"
           >
-           <img
-            src="{{ item.image | image_url: width: 140 }}"
-            alt="{{ item.image.alt | escape }}"
-            width="70"
-            height="{{ 70 | divided_by: item.image.aspect_ratio | ceil }}"
-            loading="lazy"
-          >
-            {%- liquid
-              echo variant.title
-              echo variant.price | money | strip_html | prepend: ' - '
-              if variant.available == false
-                echo 'products.product.sold_out' | t | prepend: ' - '
-              endif
-              if variant.quantity_rule.increment > 1
-                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
-              endif
-              if variant.quantity_rule.min > 1
-                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
-              endif
-              if variant.quantity_rule.max != null
-                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
-              endif
-              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
-              # theme-check-disable
-              assign cart_quantity = cart | item_count_for_variant: variant.id
-              # theme-check-enable
-              if cart_quantity > 0
-                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
-              endif
-            -%}
+           dsasadda
           </option>
         {%- endfor -%}
       </select>
